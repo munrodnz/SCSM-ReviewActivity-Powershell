@@ -15,6 +15,7 @@ $ErrorActionPreference = 'stop'
 Set-StrictMode -Version latest
 
 $RepoRoot = (Resolve-Path $PSScriptRoot\..).Path
+Write-Output "RepoRoot $($reporoot)"
 $module = Split-Path -Leaf $RepoRoot
 $psVersion = $PSVersionTable.PSVersion
 
