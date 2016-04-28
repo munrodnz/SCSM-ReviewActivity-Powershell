@@ -6,7 +6,11 @@ Function Get-SCSMActivityReviewer
       
     .DESCRIPTION
      A function gets the Review users from a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
-      
+	
+	 .PARAMETER ID
+
+	 .PARAMETER ReviewActivity
+
     .EXAMPLE
     
      Get-SCSMActivityReviewer -ID RA1234 
@@ -199,7 +203,15 @@ Function Remove-SCSMActivityReviewer
       
     .DESCRIPTION
      A function to remove a user from a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
-      
+     
+	 .PARAMETER ActivityID
+
+	 .PARAMETER UserName
+
+	 .PARAMETER Activity
+
+	 .PARAMETER User
+	  
     .EXAMPLE
     
      Remove-SCSMActivityReviewer -ActivityID RA1234 -username userA
@@ -288,7 +300,36 @@ Function Remove-SCSMActivityReviewer
 
 Function Update-SCSMActivityReviewer
 {
+ <#
+    .SYNOPSIS 
+    This function replaces a Reviewer of a review acitivity in SCSM.
+      
+    .DESCRIPTION
+     A function replaces a Reviewer of a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
 
+	.PARAMETER ExistingReviewer
+
+	.PARAMETER NewReviewer
+
+	.PARAMETER ActivityID
+
+	.PARAMETER InProgress
+
+	.PARAMETER Pending
+	       
+    .EXAMPLE
+    Bulk update all Review Activites in Progess
+     Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Inprogress 
+
+     EXAMPLE
+	Bulk Update all Review Activities in Pending status
+     Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Pending 
+     
+	 EXAMPLE
+    
+	 To Update a single Activity
+     Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -ActivityID RA123
+#>
     [cmdletbinding(DefaultParameterSetName="Single")]
     Param(
         [Parameter(Mandatory=$true,ParameterSetName="Single")]

@@ -1,4 +1,4 @@
-#Requires -Modules Pester
+﻿#Requires -Modules Pester
 <#
 .SYNOPSIS
     Tests the SCSMReviewActivities module
@@ -99,7 +99,7 @@ Describe "Module: $module" -Tags Unit {
     }
 #endregion
 #region Generic PS module tests
-    Context "Module Configuration" {
+    Context "Module Configuration"{ 
         
         It "Has a root module file ($module.psm1)" {        
             
