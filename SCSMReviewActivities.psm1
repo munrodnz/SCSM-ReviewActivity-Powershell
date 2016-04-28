@@ -6,10 +6,10 @@ Function Get-SCSMActivityReviewer
       
     .DESCRIPTION
      A function gets the Review users from a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
-	
-	 .PARAMETER ID
+    
+     .PARAMETER ID
 
-	 .PARAMETER ReviewActivity
+     .PARAMETER ReviewActivity
 
     .EXAMPLE
     
@@ -204,14 +204,14 @@ Function Remove-SCSMActivityReviewer
     .DESCRIPTION
      A function to remove a user from a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
      
-	 .PARAMETER ActivityID
+     .PARAMETER ActivityID
 
-	 .PARAMETER UserName
+     .PARAMETER UserName
 
-	 .PARAMETER Activity
+     .PARAMETER Activity
 
-	 .PARAMETER User
-	  
+     .PARAMETER User
+      
     .EXAMPLE
     
      Remove-SCSMActivityReviewer -ActivityID RA1234 -username userA
@@ -307,27 +307,27 @@ Function Update-SCSMActivityReviewer
     .DESCRIPTION
      A function replaces a Reviewer of a review activity in SCSM. The object used must be from the get-scsmobject in the smlets module (the -Useradd variable is the user object from SCSM).
 
-	.PARAMETER ExistingReviewer
+    .PARAMETER ExistingReviewer
 
-	.PARAMETER NewReviewer
+    .PARAMETER NewReviewer
 
-	.PARAMETER ActivityID
+    .PARAMETER ActivityID
 
-	.PARAMETER InProgress
+    .PARAMETER InProgress
 
-	.PARAMETER Pending
-	       
+    .PARAMETER Pending
+           
     .EXAMPLE
     Bulk update all Review Activites in Progess
      Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Inprogress 
 
      EXAMPLE
-	Bulk Update all Review Activities in Pending status
+    Bulk Update all Review Activities in Pending status
      Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Pending 
      
-	 EXAMPLE
+     EXAMPLE
     
-	 To Update a single Activity
+     To Update a single Activity
      Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -ActivityID RA123
 #>
     [cmdletbinding(DefaultParameterSetName="Single")]

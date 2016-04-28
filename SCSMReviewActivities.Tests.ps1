@@ -15,9 +15,10 @@ $ErrorActionPreference = 'stop'
 Set-StrictMode -Version latest
 
 $RepoRoot = (Resolve-Path $PSScriptRoot\..).Path
-Write-Verbose "RepoRoot $($reporoot)"
+Write-Verbose -Verbose "RepoRoot $($reporoot)"
 $module = Split-Path -Leaf $RepoRoot
 $psVersion = $PSVersionTable.PSVersion
+Write-Verbose -Verbose "Module $($Module)"
 
 #region PSScriptanalyzer
 if ($psVersion.Major -ge 5)
