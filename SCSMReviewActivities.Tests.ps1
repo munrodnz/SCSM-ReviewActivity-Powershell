@@ -14,9 +14,9 @@ Import-Module -Name (Join-Path -Path $PSScriptRoot -ChildPath 'ModuleHelper.psm1
 $ErrorActionPreference = 'stop'
 Set-StrictMode -Version latest
 
-$RepoRoot = (Resolve-Path $PSScriptRoot\..).Path
+$RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 Write-Verbose -Verbose "RepoRoot $($reporoot)"
-$module = Split-Path -Leaf $RepoRoot
+$module = 'SCSMReviewActivities'
 $psVersion = $PSVersionTable.PSVersion
 Write-Verbose -Verbose "Module $($Module)"
 
