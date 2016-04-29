@@ -319,12 +319,12 @@ Function Update-SCSMActivityReviewer
            
     .EXAMPLE
      
-	 Bulk update all Review Activites in Progess
+     Bulk update all Review Activites in Progess
      Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Inprogress 
 
     .EXAMPLE
     
-	 Bulk Update all Review Activities in Pending status
+     Bulk Update all Review Activities in Pending status
      Update-SCSMActivityReviewer -ExistingReviewer <username> -NewReviewer <userName> -Pending 
      
     .EXAMPLE
