@@ -6,7 +6,7 @@ install:
 build_script:
 - ps: New-ModuleManifest -ModuleVersion 1.0 -Path .\SCSMReviewActivities.psd1 -Author 'Rob Plank' -Company '' -Description 'Advanced SCSM Reveiw Activity cmdlets ' -RootModule '.\SCSMReviewActivities.psm1' -FunctionsToExport Get-SCSMActivityReviewer, Add-SCSMActivityReviewer, Remove-SCSMActivityReviewer, Update-SCSMActivityReviewer
 - ps: $content = Get-Content -Path .\SCSMReviewActivities.psd1 -Raw -Encoding Unicode 
-- ps: [System.IO.File]::writeAllText('.\SCSMReviewActivities.psd1',$content, [System.Text.Encoding]::UTF8)
+
 
 test_script:
 - ps: $res = Invoke-Pester -OutputFormat NUnitXml -OutputFile TestsResults.xml -PassThru -Path ".\"
